@@ -1,0 +1,88 @@
+<!-- <%- include("partials/header") %> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style>
+    .transfer-header{
+	padding:5px;
+	text-align:center;
+	margin:0;
+	background-color:#dd924c;
+    font-family:'Open Sans', sans-serif;
+	font-size:20px;
+}
+table{
+	
+
+	margin:100;
+	align-content:center;
+	align-items:center;
+	width:100%;
+	background-color:#dd924c;
+    font-family:'Open Sans', sans-serif
+	
+}
+.header1 th{
+	background-color:#5c92e4;
+	font-family:'Work Sans', sans-serif;
+	padding:20px;
+	text-align:center;
+	font-family:'Open Sans', sans-serif
+}
+.header2 td{
+	padding:20px;
+	text-align:center;
+	font-family:'Roboto', sans-serif;
+	font-family:'Open Sans', sans-serif
+}
+.transfer-btn{
+	padding:10px;
+	background-color:#1ac6ff;
+	border:none;
+    font-family:'Benne', serif;
+	font-size:15px;
+}
+.transfer-btn:hover{
+    background-color:#9ee781;
+}
+.transfer-btn a{
+	color:#ffffff;
+	text-decoration:none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="transfer-header">
+        <h1>Transfer to : </h1>
+    </div>
+    
+    <div class="table">
+        <table>
+            <tr class ="header1">
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Credits</th>
+                <th></th>
+            </tr>
+        <% for(let current of users){ %>
+    
+            <% if(!user._id.equals(current._id)){ %>
+                <tr class ="header2">
+                    <td><%= current.name %></td>
+                    <td><%= current.email%></td>
+                    <td><%= current.credits%></td>
+          <td><button class="transfer-btn"><a href="/view/<%= user._id %>/<%= 
+             current._id %>">Transfer</a></button></td>
+                </tr>
+            <% } %>
+    
+        <% } %>
+        </table>    
+    </div>
+
+</body>
+</html>
+
+<!-- <%- include("partials/footer") %> -->

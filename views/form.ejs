@@ -1,0 +1,78 @@
+<!-- <%- include("partials/header") %> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style>
+        .box-container{
+	background-color:rgb(155, 155, 219);
+	margin-left:400px;
+	margin-right:400px;
+	margin-top:100px;
+	padding:25px;
+	display:block;
+}
+.form-body1{
+	font-size:15px;
+	font-family:'Noto Serif', serif;
+	padding:0;
+	margin:0;
+	text-align:center;
+}
+.transfer1 {
+	margin-top:7px;
+	color:#e4ff4d;
+	font-weight:bold;
+}
+.form{
+	margin-top:5px;
+	text-align:center;
+	padding:2px;
+}
+.transfer2-btn{
+	 margin:0;
+	align-items:center;
+    text-transform: uppercase;
+    padding : 0.2rem;
+    background-color: #d7263d;
+    color: whitesmoke;
+}
+.transfer2-btn:hover{
+    background-color:#2d80d2;
+}
+body{
+    background-color:rgb(155, 155, 219);
+}
+
+    </style>
+</head>
+<body>
+    <div class='box-container'>
+        <div class="form-body1">
+        <h1 class="transfer1">Transferring From : </h1>
+        <h3>Customer Name : <%= fromUser.name %></h3>
+        <h3>Credits = <%= fromUser.credits %></h3>  
+    
+        <h1 class ='transfer1'>Transferring To : </h1>
+        <h3>Customer Name : <%= toUser.name %></h3>
+        <h3>Credits = <%= toUser.credits %></h3>
+        </div>
+    
+    <div class="form">
+        <form action="/view/<%= fromUser._id %>/<%= toUser._id %>?_method=PUT" method="POST">
+        <label for="credits">NO. OF CREDITS TO BE TRANSFERRED</label> :</label>
+        <br>
+        <input type="number" id="credit" name="credit" placeholder=""
+               value="">
+        <br>
+        <button class="transfer2-btn">Transfer</button>
+        </form>
+    </div>
+    
+    </div>
+    
+
+</body>
+</html>
+
+<!-- <%- include("partials/footer") %> -->
